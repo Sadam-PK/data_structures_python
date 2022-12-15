@@ -39,6 +39,14 @@ class LinkedList:
         for data in data_list:
             self.insert_end(data)
 
+    def get_length(self):
+        count = 0
+        node = self.head
+        while node:
+            count += 1
+            node = node.next
+        return count
+
 
 if __name__ == '__main__':
     ll = LinkedList()
@@ -48,3 +56,4 @@ if __name__ == '__main__':
     # ll.insert_end(5)
     ll.insert_list([2, 5, 3, 9, 0, 7])
     ll.print()
+    print(ll.get_length())
