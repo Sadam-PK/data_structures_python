@@ -34,11 +34,17 @@ class LinkedList:
                 node = node.next
             node.next = Node(data, None)
 
+    def insert_list(self, data_list):
+        self.head = None
+        for data in data_list:
+            self.insert_end(data)
+
 
 if __name__ == '__main__':
     ll = LinkedList()
     # ll.insert_begining(5)
     # ll.insert_begining(89)
-    ll.insert_end(5)
-    ll.insert_end(5)
+    # ll.insert_end(5)
+    # ll.insert_end(5)
+    ll.insert_list([2, 5, 3, 9, 0, 7])
     ll.print()
