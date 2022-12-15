@@ -24,9 +24,21 @@ class LinkedList:
                 node = node.next
             print(llstr)
 
+    def insert_end(self, data):
+        if self.head is None:
+            self.head = Node(data, None)
+            return
+        else:
+            node = self.head
+            while node.next:
+                node = node.next
+            node.next = Node(data, None)
+
 
 if __name__ == '__main__':
     ll = LinkedList()
-    ll.insert_begining(5)
-    ll.insert_begining(89)
+    # ll.insert_begining(5)
+    # ll.insert_begining(89)
+    ll.insert_end(5)
+    ll.insert_end(5)
     ll.print()
