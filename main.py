@@ -17,11 +17,11 @@ class LinkedList:
             print('Linkedlist is empty')
             return
         else:
-            itr = self.head
+            node = self.head
             llstr = ''
-            while itr:
-                llstr += str(itr.data) + ' --> '
-                itr = itr.next
+            while node:
+                llstr += str(node.data) + ' --> '
+                node = node.next
             print(llstr)
 
 
