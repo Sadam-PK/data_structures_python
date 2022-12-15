@@ -47,6 +47,21 @@ class LinkedList:
             node = node.next
         return count
 
+    def remove_node(self, index):
+        if index < 0 or index >= self.get_length():
+            raise Exception('Invalid Index.')
+        if index == 0:
+            self.head = self.head.next
+            return
+        count = 0
+        node = self.head
+        while node:
+            if count == index - 1:
+                node.next = node.next.next
+                break
+            node = node.next
+            count += 1
+
 
 if __name__ == '__main__':
     ll = LinkedList()
@@ -57,3 +72,5 @@ if __name__ == '__main__':
     ll.insert_list([2, 5, 3, 9, 0, 7])
     ll.print()
     print(ll.get_length())
+    ll.remove_node(2)
+    ll.print()
