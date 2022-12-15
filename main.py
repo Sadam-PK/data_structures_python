@@ -62,6 +62,22 @@ class LinkedList:
             node = node.next
             count += 1
 
+    def insert_at(self, index, data):
+        if index < 0 or index > self.get_length():
+            raise Exception('Invalid Index')
+        if index == 0:
+            self.insert_begining(data)
+            return
+        count = 0
+        node = self.head
+        while node:
+            if count == index - 1:
+                node = Node(data, node.next)
+                node.next = node
+                break
+            node = node.next
+            count += 1
+
 
 if __name__ == '__main__':
     ll = LinkedList()
@@ -73,4 +89,6 @@ if __name__ == '__main__':
     ll.print()
     print(ll.get_length())
     ll.remove_node(2)
+    ll.print()
+    ll.insert_at(0, 2)
     ll.print()
